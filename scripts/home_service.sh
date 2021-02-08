@@ -5,7 +5,7 @@ xterm  -geometry 80x20+0+0 -e  " roslaunch jetbot jetbot_world.launch world_file
 #xterm  -e  " roslaunch turtlebot_gazebo turtlebot_world.launch " &
 sleep 5
 
-xterm  -geometry 80x20+0+200 -e  " roslaunch jetbot jetbot_amcl.launch map_file:=/"$PWD"/src/map/pongrut_map.yaml " &
+xterm  -geometry 80x20+0+200 -e  " roslaunch jetbot jetbot_amcl.launch map_file:="$PWD"/src/map/pongrut_map.yaml " &
 #xterm  -e  " roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/pongrut/catkin_ws/src/worlds/pongrut_map.yaml " &
 #xterm  -e  " roslaunch turtlebot_gazebo amcl_demo.launch " &
 
