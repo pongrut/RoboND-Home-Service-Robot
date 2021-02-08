@@ -2,6 +2,6 @@
   Used for visualising the turtlebot while building a map or navigating with the ros navistack.
  -->
 <launch>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d /home/pongrut/catkin_ws/src/rvizConfig/navigation.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jetbot)/../rvizConfig/navigation.rviz"/>
 </launch>
 
