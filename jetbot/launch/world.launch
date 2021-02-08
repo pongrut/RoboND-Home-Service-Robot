@@ -17,7 +17,7 @@
 
 
   <!-- World File -->
-  <arg name="world_file" default="/home/pongrut/catkin_ws/src/worlds/pongrut.world"/>
+  <arg name="world_file" default="$(find jetbot)/worlds/pongrut.world"/>
 
   <!-- Launch Gazebo World -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
