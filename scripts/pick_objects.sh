@@ -1,6 +1,6 @@
 #!/bin/sh
 #xterm  -e  " roslaunch jetbot jetbot_world.launch world_file:=/home/pongrut/catkin_ws/src/worlds/pongrut.world " &
-xterm  -e  " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:="$PWD"/src/map/pongrut.world " &
+xterm  -e  " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:="$PWD"/src/worlds/pongrut.world " &
 sleep 5
 
 #xterm  -e  " roslaunch turtlebot_gazebo amcl_demo.launch map_file:="$PWD"/src/map/pongrut_map.yaml " &
