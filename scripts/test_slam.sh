@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [[ $1 == turtlebot ]]; then
     echo "Launching turtlebot..."
