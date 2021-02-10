@@ -23,7 +23,6 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
 ├── videos.  
     └── RobotND-Home-Service-Robot.gif 
 └── src.                                                # ROS packages
-    ├── CMakeLists.txt                                  # Link libraries
     ├── add_makers                                      # move_base config files
     │   ├── src
     │   │   └── add_markers.cpp                         # add_makers node c++ source code
@@ -92,6 +91,7 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
     ├── turtlebot                                       # turtlebot keyboard_teleop package directory
     ├── turtlebot_interactions                          # turtlebot view_navigation.launch package directory   
     ├── turtlebot_simulator                             # turtlebot gazebo simluator package directory
-    └── worlds                                          # simulated world in Gazebo
+    ├── worlds                                          # simulated world in Gazebo
         └── pongrut.world                               # custom world file of project
+    └── CMakeLists.txt                                  # Link libraries        
 ```
