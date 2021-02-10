@@ -16,7 +16,7 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
 
 .RoboND-Home-Service-Robot                              # Home Service Robot Project
 ├── README.md
-├── WRITEUP.md                                          # Project documentation
+├── writeup.md                                          # Project documentation
 ├── images                                  
 │   ├── jetbot1.png
 │   └── jetbot1_small.png
