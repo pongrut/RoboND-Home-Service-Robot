@@ -13,62 +13,64 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
 
 ### Project structure:
 ```bash
-tree
-RoboND-Home-Service-Robot                   # Home Service Robot Project
+
+.RoboND-Home-Service-Robot                   # Home Service Robot Project
 ├── README.md
-├── images                                  # Project documentation
-│   ├── database.png
-│   ├── frames.png
-│   ├── gazebo.png
-│   ├── rosgraph.png
-│   ├── rtab-map.png
-│   ├── rviz.png
-│   └── video.png
-├── videos.                                 # Project documentation
-└── src.                                    # ROS packages
-    ├── CMakeLists.txt                      # Link libraries
-    ├── add_makers                          # move_base config files
-    │   ├── base_local_planner_params.yaml
-    │   └── local_costmap_params.yaml
-    ├── jetbot                              # Recorded database of the map
-    │   └── rtabmap.db
-    ├── map
-    │   ├── localization.launch             # Start RTAB-Map in localization mode
-    │   ├── mapping.launch                  # Start RTAB-Map in mapping mode
-    │   ├── multisession_mapping.launch     # Start RTAB-Map in mulisession mapping mode
-    │   ├── navigation.launch               # Start the move_base navigation
-    │   ├── robot_description.launch        # Robot URDF description
-    │   ├── teleop.launch                   # Start the teleop package
-    │   └── world.launch                    # Initialize robot in Gazebo environment
-    ├── pick_objects                        # Custom robot meshes
-    │   ├── chassis.dae
-    │   ├── chassis.SLDPRT
-    │   ├── chassis.STEP
-    │   ├── hokuyo.dae
-    │   ├── wheel.dae
-    │   ├── wheel.SLDPRT
-    │   └── wheel.STEP
-    ├── rvizConfig                          # RViz config file for the project
-    │   └── mapping.rviz
-    ├── scripts                             # Shell scripts
-    │   ├── my_robot.gazebo
-    │   └── my_robot.xacro
-    ├── slam_gmapping                       # slam_gmapping package
-    │   ├── my_robot.gazebo
-    │   └── my_robot.xacro
-    ├── teleop_twist_keyboard               # teleop_twist_keyboard package
-    │   ├── my_robot.gazebo
-    │   └── my_robot.xacro
-    ├── turtlebot                           # Turtlebot keyboard_teleop 
-    │   ├── my_robot.gazebo
-    │   └── my_robot.xacro    
-    ├── turtlebot_interactions              # Turtlebot view_navigation.launch file 
-    │   ├── my_robot.gazebo
-    │   └── my_robot.xacro    
-    ├── turtlebot_simulator                 # Turtlebot gazebo simluator
-    │   ├── my_robot.gazebo
-    │   └── my_robot.xacro    
-    └── worlds                              # Simulated world in Gazebo
-        ├── empty.world
-        └── MyWorld.world
+├── WRITEUP.md                               # Project documentation
+├── images                                  
+│   ├── jetbot1.png
+│   └── jetbot1_small.png
+├── videos.  
+    └── RobotND-Home-Service-Robot.gif 
+└── src.                                                # ROS packages
+    ├── CMakeLists.txt                                  # Link libraries
+    ├── add_makers                                      # move_base config files
+    │   ├── src
+    │   │   └── add_markers.cpp                         # add_makers node c++ source code
+    │   ├── CMakeLists.txt                              # compiler instructions
+    │   └── package.xml                                 # package info
+    ├── jetbot                                          # jetbot robot package
+    │   │   ├── config                                  # navigation configuration files
+    │   │   │   ├── costmap_common_params.yaml          # store common local & global costmap parameters
+    │   │   │   ├── dwa_local_planner_params.yaml       # store parameters of the dwa_local_planner 
+    │   │   │   ├── global_costmap_params.yaml          # store common global costmap parameters 
+    │   │   │   ├── global_planner_params.yaml          # store common global planner parameters
+    │   │   │   ├── local_costmap_params.yaml           # store common local costmap parameters      
+    │   │   │   ├── move_base_params.yaml               # store move base node parameters  
+    │   │   │   └── navfn_global_planner_params.yaml    # store navfn global planner parameters      
+    │   │   ├── launch                                  # Start RTAB-Map in mapping mode
+    │   │   ├── maps                                    # 
+    │   │   ├── meshes                                  # 
+    │   │   ├── rviz                                    # 
+    │   │   ├── urdf                                    #       
+    │   │   └── worlds                                  #    
+    ├── map                                             # map files
+    │   ├── localization.launch                         # Start RTAB-Map in localization mode
+    │   ├── mapping.launch                              # Start RTAB-Map in mapping mode
+    │   ├── multisession_mapping.launch                 # Start RTAB-Map in mulisession mapping mode
+    │   ├── navigation.launch                           # Start the move_base navigation
+    │   ├── robot_description.launch                    # Robot URDF description
+    │   ├── teleop.launch                               # Start the teleop package
+    │   └── world.launch                                # Initialize robot in Gazebo environment
+    ├── pick_objects                                    # Custom robot meshes
+    │   ├── src
+    │   │   └── pick_objects.cpp                        # pick_objects node c++ source code
+    │   ├── CMakeLists.txt                              # compiler instructions
+    │   └── package.xml                                 # package info
+    ├── rvizConfig                                      # RViz config file for the project
+    │   └── navigation.rviz
+    ├── scripts                                         # Shell scripts
+    │   ├── add_markers.sh                              # test add & remove markers script
+    │   ├── home_service.sh                             # home service robot project script
+    │   ├── launch.sh                                   # test gazebo, ros, and rviz launch script 
+    │   ├── pick_objects.sh                             # test robot automatic goals navigation script
+    │   ├── test_navigation.sh                          # test manual goal setting navigation script
+    │   └── test_slam.sh                                # test manual keyboard navigation script
+    ├── slam_gmapping                                   # slam_gmapping package directory
+    ├── teleop_twist_keyboard                           # teleop_twist_keyboard package directory
+    ├── turtlebot                                       # turtlebot keyboard_teleop package directory
+    ├── turtlebot_interactions                          # turtlebot view_navigation.launch package directory   
+    ├── turtlebot_simulator                             # turtlebot gazebo simluator package directory
+    └── worlds                                          # simulated world in Gazebo
+        └── pongrut.world                               # custom world file of project
 ```
