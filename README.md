@@ -14,9 +14,9 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
 ### Project structure:
 ```bash
 tree
-.Udacity-Robotics-SLAM                      # Map My World Project
+RoboND-Home-Service-Robot                   # Home Service Robot Project
 ├── README.md
-├── documentation                           # Project documentation
+├── images                                  # Project documentation
 │   ├── database.png
 │   ├── frames.png
 │   ├── gazebo.png
@@ -24,16 +24,15 @@ tree
 │   ├── rtab-map.png
 │   ├── rviz.png
 │   └── video.png
-└── my_robot                                # my_robot node
+├── videos.                                 # Project documentation
+└── src.                                    # ROS packages
     ├── CMakeLists.txt                      # Link libraries
-    ├── config                              # move_base config files
+    ├── add_makers                          # move_base config files
     │   ├── base_local_planner_params.yaml
-    │   ├── costmap_common_params.yaml
-    │   ├── global_costmap_params.yaml
     │   └── local_costmap_params.yaml
-    ├── database                            # Recorded database of the map
+    ├── jetbot                              # Recorded database of the map
     │   └── rtabmap.db
-    ├── launch
+    ├── map
     │   ├── localization.launch             # Start RTAB-Map in localization mode
     │   ├── mapping.launch                  # Start RTAB-Map in mapping mode
     │   ├── multisession_mapping.launch     # Start RTAB-Map in mulisession mapping mode
@@ -41,7 +40,7 @@ tree
     │   ├── robot_description.launch        # Robot URDF description
     │   ├── teleop.launch                   # Start the teleop package
     │   └── world.launch                    # Initialize robot in Gazebo environment
-    ├── meshes                              # Custom robot meshes
+    ├── pick_objects                        # Custom robot meshes
     │   ├── chassis.dae
     │   ├── chassis.SLDPRT
     │   ├── chassis.STEP
@@ -49,12 +48,26 @@ tree
     │   ├── wheel.dae
     │   ├── wheel.SLDPRT
     │   └── wheel.STEP
-    ├── package.xml
-    ├── rviz                                # RViz config file for the project
+    ├── rvizConfig                          # RViz config file for the project
     │   └── mapping.rviz
-    ├── urdf                                # Robot URDF description
+    ├── scripts                             # Shell scripts
     │   ├── my_robot.gazebo
     │   └── my_robot.xacro
+    ├── slam_gmapping                       # slam_gmapping package
+    │   ├── my_robot.gazebo
+    │   └── my_robot.xacro
+    ├── teleop_twist_keyboard               # teleop_twist_keyboard package
+    │   ├── my_robot.gazebo
+    │   └── my_robot.xacro
+    ├── turtlebot                           # Turtlebot keyboard_teleop 
+    │   ├── my_robot.gazebo
+    │   └── my_robot.xacro    
+    ├── turtlebot_interactions              # Turtlebot view_navigation.launch file 
+    │   ├── my_robot.gazebo
+    │   └── my_robot.xacro    
+    ├── turtlebot_simulator                 # Turtlebot gazebo simluator
+    │   ├── my_robot.gazebo
+    │   └── my_robot.xacro    
     └── worlds                              # Simulated world in Gazebo
         ├── empty.world
         └── MyWorld.world
