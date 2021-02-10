@@ -14,9 +14,9 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
 ### Project structure:
 ```bash
 
-.RoboND-Home-Service-Robot                   # Home Service Robot Project
+.RoboND-Home-Service-Robot                              # Home Service Robot Project
 ├── README.md
-├── WRITEUP.md                               # Project documentation
+├── WRITEUP.md                                          # Project documentation
 ├── images                                  
 │   ├── jetbot1.png
 │   └── jetbot1_small.png
