@@ -2,7 +2,7 @@
  The simulation of a full home service robot capable of navigating to pick up and deliver virtual objects. 
 
 [![Demo_Video](/videos/RoboND-Robot-Where-Am-I_3.gif)](https://youtu.be/ekG1Bm4HrC4)
-![Jetbot_Model2](images/jetbot1.png)  
+![Jetbot_Model2](images/jetbot1_small.png)  
 ![Screen Shot1](images/amcl_screen_shot01.jpg) 
 ![Screen Shot2](images/amcl_screen_shot02.jpg) 
 ![Screen Shot3](images/amcl_screen_shot03.jpg) 
