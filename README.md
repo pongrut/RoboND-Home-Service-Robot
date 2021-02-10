@@ -92,6 +92,6 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
     ├── turtlebot_interactions                          # turtlebot view_navigation.launch package directory   
     ├── turtlebot_simulator                             # turtlebot gazebo simluator package directory
     ├── worlds                                          # simulated world in Gazebo
-        └── pongrut.world                               # custom world file of project
+    │   └── pongrut.world                               # custom world file of project
     └── CMakeLists.txt                                  # Link libraries        
 ```
