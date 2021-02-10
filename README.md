@@ -38,20 +38,41 @@ However, Jetbot model is very small can be driven **maximum at 0.l speed**.
     │   │   │   ├── local_costmap_params.yaml           # store common local costmap parameters      
     │   │   │   ├── move_base_params.yaml               # store move base node parameters  
     │   │   │   └── navfn_global_planner_params.yaml    # store navfn global planner parameters      
-    │   │   ├── launch                                  # Start RTAB-Map in mapping mode
-    │   │   ├── maps                                    # 
-    │   │   ├── meshes                                  # 
-    │   │   ├── rviz                                    # 
-    │   │   ├── urdf                                    #       
-    │   │   └── worlds                                  #    
-    ├── map                                             # map files
-    │   ├── localization.launch                         # Start RTAB-Map in localization mode
-    │   ├── mapping.launch                              # Start RTAB-Map in mapping mode
-    │   ├── multisession_mapping.launch                 # Start RTAB-Map in mulisession mapping mode
-    │   ├── navigation.launch                           # Start the move_base navigation
-    │   ├── robot_description.launch                    # Robot URDF description
-    │   ├── teleop.launch                               # Start the teleop package
-    │   └── world.launch                                # Initialize robot in Gazebo environment
+    │   │   ├── launch                                  # jetbot launch files
+    │   │   │   ├── jetbot_amcl.launch                  # map_server, amcl, move_base nodes launch file
+    │   │   │   ├── jetbot_gmapping.launch              # gmapping node & parameters launch file
+    │   │   │   ├── jetbot_view_navigation.launch       # rviz launch file
+    │   │   │   ├── jetbot_world.launch                 # robot urdf_spawner node launch file
+    │   │   │   ├── robot_description.launch            # joint_state_publisher, robot_state_publisher nodes launch file
+    │   │   │   ├── teleop.launch                       # teleop_twist_keyboard node launch file
+    │   │   │   └── world.launch                        # default robot urdf_spawner node launch file
+    │   │   ├── maps                                    # jetbot embeded map files
+    │   │   │   ├── pongrut_map.pgm                     # image map file 
+    │   │   │   └── pongrut_map.yaml                    # map description file
+    │   │   ├── meshes                                  # mesh files
+    │   │   │   ├── hokuyo.dae
+    │   │   │   ├── jetbot-chassis.dae
+    │   │   │   ├── jetbot-chassis.stl
+    │   │   │   ├── jetbot-chassis_no_board.stl
+    │   │   │   ├── jetbot-chassis_w_caster.stl
+    │   │   │   ├── jetbot-left-wheel.stl
+    │   │   │   ├── jetbot-right-wheel.stl   
+    │   │   │   ├── jetbot-wheel.stl
+    │   │   │   ├── jetson_nano.stl
+    │   │   │   └── raspbery_pi_cam.stl
+    │   │   ├── rviz                                    # rviz config file for jetbot
+    │   │   │   └── default.rviz  
+    │   │   ├── urdf                                    # robot description files   
+    │   │   │   ├── jetbot.gazebo                       # gazebo sensors plugin file  
+    │   │   │   └── jetbot.xacro                        # jetbot Unified Robot Description Format (URDF) file  
+    │   │   └── worlds                                  # jetbot embeded world files    
+    │   │   │   ├── empty.world                           
+    │   │   │   └── pongrut.world                        
+    │   │   ├── CMakeLists.txt                          # compiler instructions  
+    │   │   └── package.xml                             # package info
+    ├── map                                             # project map files
+    │   ├── pongrut_map.pgm                             # image map file 
+    │   └── pongrut_map.yaml                            # map description file    
     ├── pick_objects                                    # Custom robot meshes
     │   ├── src
     │   │   └── pick_objects.cpp                        # pick_objects node c++ source code
