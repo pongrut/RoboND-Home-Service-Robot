@@ -41,6 +41,7 @@ cp -a RoboND-Home-Service-Robot/src/* catkin_ws/src
 cd /home/workspace/catkin_ws
 catkin_make
 source devel/setup.bash
+chmod +x src/scripts/*
 rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 ## Install Dependent Packages:
