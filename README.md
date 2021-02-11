@@ -16,6 +16,7 @@ and then hides the marker. After that, wait 5 seconds and assign the new goal at
 * ROS map-server package 
 * ROS move-base package 
 * ROS amcl package 
+* ROS teleop_twist_keyboard
 * ROS turtlebot package 
 ```
 sudo apt-get update && apt-get upgrade
@@ -24,6 +25,7 @@ sudo apt-get install ros-kinetic-navigation
 sudo apt-get install ros-kinetic-map-server
 sudo apt-get install ros-kinetic-move-base
 sudo apt-get install ros-kinetic-amcl
+sudo apt-get install ros-kinetic-teleop-twist-keyboard
 sudo apt-get install ros-kinetic-turtlebot*
 ```
 ## Create Catkin Workspace:
