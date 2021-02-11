@@ -132,7 +132,10 @@ Home Service Robot in Rviz Screen
 .RoboND-Home-Service-Robot                              # Home Service Robot Project
 ├── README.md
 ├── writeup.md                                          # Project documentation
-├── images                                  
+├── images  
+│   ├── home_service_robot.jpg
+│   ├── home_service_robot_2.jpg
+│   ├── home_service_robot_3.jpg
 │   ├── jetbot1.png
 │   └── jetbot1_small.png
 ├── videos.  
