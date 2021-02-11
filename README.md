@@ -34,6 +34,9 @@ catkin_init_workspace
 cd ..
 catkin_make
 source devel/setup.bash
+
+cd ..
+git clone https://github.com/pongrut/RoboND-Home-Service-Robot.git
 ```
 ## Install Dependent Packages:
 ```
