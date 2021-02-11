@@ -50,6 +50,18 @@ rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 
 ## Run the project  
+* SLAM mapping test with test_slam.sh shell script  
+```
+cd /home/workspace/catkin_ws/
+source devel/setup.bash
+
+# Run with my Jetbot
+./src/script/test_slam.sh
+
+# Or run with Turtlebot
+./src/script/test_slam.sh turtlebot
+``` 
+
 * Environment navigation test with test_navigation.sh shell script  
 ```
 cd /home/workspace/catkin_ws/
