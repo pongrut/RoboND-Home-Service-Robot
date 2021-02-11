@@ -37,6 +37,10 @@ source devel/setup.bash
 
 cd ..
 git clone https://github.com/pongrut/RoboND-Home-Service-Robot.git
+cp -a RoboND-Home-Service-Robot/src/* catkin_ws/src
+cd /home/workspace/catkin_ws
+catkin_make
+source devel/setup.bash
 ```
 ## Install Dependent Packages:
 ```
