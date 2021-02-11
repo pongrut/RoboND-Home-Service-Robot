@@ -103,10 +103,10 @@ cd /home/workspace/catkin_ws/
 source devel/setup.bash
 
 # Run with my Jetbot
-./src/scripts/add_marker.sh
+./src/scripts/add_markers.sh
 
 # Or run with Turtlebot
-./src/scripts/add_marker.sh turtlebot
+./src/scripts/add_markers.sh turtlebot
 ``` 
 
 * Launch Home Service Robot with home_service.sh shell script  
