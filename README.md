@@ -122,7 +122,7 @@ source devel/setup.bash
 ./src/scripts/home_service.sh turtlebot
 ``` 
 ![Screen](images/home_service_robot.jpg)  
-
+Home Service Robot in Rviz Screen
 ### Project structure:
 ```bash
 
