@@ -11,12 +11,14 @@ and then hides the marker. After that, wait 5 seconds and assign the new goal at
 ## Prerequisites/Dependencies  
 * Gazebo >= 7.0  
 * [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+* ROS gazebo package
 * ROS navigation package  
 * ROS map-server package 
 * ROS move-base package 
 * ROS amcl package 
 * ROS turtlebot package 
 ```
+sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control  ros-kinetic-effort-controllers
 sudo apt-get install ros-kinetic-navigation
 sudo apt-get install ros-kinetic-map-server
 sudo apt-get install ros-kinetic-move-base
@@ -24,10 +26,7 @@ sudo apt-get install ros-kinetic-amcl
 sudo apt-get install ros-kinetic-turtlebot*
 ```
 
-* ROS gazebo package  
-```
-sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control  ros-kinetic-effort-controllers
-```
+
 
 ## Run the project  
 * Clone ros-teleop repository
