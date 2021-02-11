@@ -54,6 +54,7 @@ rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 cd /home/workspace/catkin_ws/
 source devel/setup.bash
+
 # Run Home Service with my Jetbot
 ./src/script/home_service.sh
 
