@@ -41,6 +41,7 @@ cp -a RoboND-Home-Service-Robot/src/* catkin_ws/src
 cd /home/workspace/catkin_ws
 catkin_make
 source devel/setup.bash
+rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 ## Install Dependent Packages:
 ```
@@ -53,7 +54,6 @@ git clone https://github.com/ros-teleop/teleop_twist_keyboard
 cd ..
 catkin_make
 source devel/setup.bash
-rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 
 ## Run the project  
@@ -63,10 +63,10 @@ cd /home/workspace/catkin_ws/
 source devel/setup.bash
 
 # Run with my Jetbot
-./src/script/test_slam.sh
+./src/scripts/test_slam.sh
 
 # Or run with Turtlebot
-./src/script/test_slam.sh turtlebot
+./src/scripts/test_slam.sh turtlebot
 ``` 
 
 * Environment navigation test with test_navigation.sh shell script  
@@ -75,10 +75,10 @@ cd /home/workspace/catkin_ws/
 source devel/setup.bash
 
 # Run with my Jetbot
-./src/script/test_navigation.sh
+./src/scripts/test_navigation.sh
 
 # Or run with Turtlebot
-./src/script/test_navigation.sh turtlebot
+./src/scripts/test_navigation.sh turtlebot
 ``` 
 
 * 2 navigation goals test with pick_objects.sh shell script 
@@ -87,10 +87,10 @@ cd /home/workspace/catkin_ws/
 source devel/setup.bash
 
 # Run with my Jetbot
-./src/script/pick_objects.sh
+./src/scripts/pick_objects.sh
 
 # Or run with Turtlebot
-./src/script/pick_objects.sh turtlebot
+./src/scripts/pick_objects.sh turtlebot
 ``` 
 
 * Virtual object simulation test with add_marker.sh shell script 
@@ -99,10 +99,10 @@ cd /home/workspace/catkin_ws/
 source devel/setup.bash
 
 # Run with my Jetbot
-./src/script/add_marker.sh
+./src/scripts/add_marker.sh
 
 # Or run with Turtlebot
-./src/script/add_marker.sh turtlebot
+./src/scripts/add_marker.sh turtlebot
 ``` 
 
 * Launch Home Service Robot with home_service.sh shell script  
@@ -111,10 +111,10 @@ cd /home/workspace/catkin_ws/
 source devel/setup.bash
 
 # Run Home Service with my Jetbot
-./src/script/home_service.sh
+./src/scripts/home_service.sh
 
 # Or run Home Service with Turtlebot
-./src/script/home_service.sh turtlebot
+./src/scripts/home_service.sh turtlebot
 ```  
 ### Project structure:
 ```bash
