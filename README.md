@@ -10,7 +10,7 @@ Jetbot calculates global path planning to the goal and local path planning along
 and then hides the marker. After that, wait 5 seconds and assign the new goal at drop off location Jetbot calculate the destination's path, then show the marker at the drop off zone once jetbot reaches it.
 ## Prerequisites/Dependencies  
 * Gazebo >= 7.0  
-* [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+* ROS Kinetic [Ubuntu install of ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 * ROS gazebo package
 * ROS navigation package  
 * ROS map-server package 
