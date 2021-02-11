@@ -18,6 +18,7 @@ and then hides the marker. After that, wait 5 seconds and assign the new goal at
 * ROS amcl package 
 * ROS turtlebot package 
 ```
+sudo apt-get update && apt-get upgrade
 sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control  ros-kinetic-effort-controllers
 sudo apt-get install ros-kinetic-navigation
 sudo apt-get install ros-kinetic-map-server
@@ -25,8 +26,27 @@ sudo apt-get install ros-kinetic-move-base
 sudo apt-get install ros-kinetic-amcl
 sudo apt-get install ros-kinetic-turtlebot*
 ```
-
-
+## Create Catkin Workspace:
+```
+mkdir -p /home/workspace/catkin_ws/src
+cd /home/workspace/catkin_ws/src
+catkin_init_workspace
+cd ..
+catkin_make
+source devel/setup.bash
+rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
+```
+## Install Dependent Packages:
+```
+cd /home/workspace/catkin_ws/src
+git clone --branch hydro-devel  https://github.com/ros-perception/slam_gmapping.git
+git clone --branch kinetic https://github.com/turtlebot/turtlebot.git  
+git clone --branch indigo https://github.com/turtlebot/turtlebot_simulator.git
+git clone --branch indigo https://github.com/turtlebot/turtlebot_interactions.git
+git clone https://github.com/ros-teleop/teleop_twist_keyboard
+cd ..
+catkin_make
+```
 
 ## Run the project  
 * Clone ros-teleop repository
