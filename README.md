@@ -121,7 +121,10 @@ source devel/setup.bash
 # Or run Home Service with Turtlebot
 ./src/scripts/home_service.sh turtlebot
 ``` 
-![Screen](images/home_service_robot.jpg)  
+![Gazebo Screen](images/home_service_robot3.jpg)  
+Home Service Robot in Gazebo Screen
+
+![Rviz Screen](images/home_service_robot.jpg)  
 Home Service Robot in Rviz Screen
 ### Project structure:
 ```bash
