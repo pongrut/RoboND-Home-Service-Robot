@@ -44,6 +44,7 @@ cd /home/workspace/catkin_ws
 catkin_make
 source devel/setup.bash
 chmod +x src/scripts/*
+chmod +x src/teleop_twist_keyboard/teleop_twist_keyboard.py
 rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 ## Install Dependent Packages:
