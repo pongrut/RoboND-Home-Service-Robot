@@ -34,7 +34,6 @@ catkin_init_workspace
 cd ..
 catkin_make
 source devel/setup.bash
-rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 ## Install Dependent Packages:
 ```
@@ -46,6 +45,7 @@ git clone --branch indigo https://github.com/turtlebot/turtlebot_interactions.gi
 git clone https://github.com/ros-teleop/teleop_twist_keyboard
 cd ..
 catkin_make
+rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 
 ## Run the project  
