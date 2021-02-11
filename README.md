@@ -5,8 +5,9 @@
 ![Jetbot_Model2](images/jetbot1_small.png)  
 
 ## Overview  
-In this project implement ROS AMCL package to accurately localize a Jetbot inside a map in the Gazebo simulation environments.
-However, Jetbot model is very small can be driven **maximum at 0.l speed**.
+The simulation starts by showing the marker object at the pickup zone then the Jetbot is assigned the pickup zone as the goal.
+Jetbot calculates global path planning to the goal and local path planning along the way when Jetbot has arrived at the pickup zone
+and then hides the marker. After that, wait 5 seconds and assign the new goal at drop off location Jetbot calculate the destination's path, then show the marker at the drop off zone once jetbot reaches it.
 
 ### Project structure:
 ```bash
