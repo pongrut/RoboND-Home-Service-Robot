@@ -8,7 +8,36 @@
 The simulation starts by showing the marker object at the pickup zone then the Jetbot is assigned the pickup zone as the goal.
 Jetbot calculates global path planning to the goal and local path planning along the way when Jetbot has arrived at the pickup zone
 and then hides the marker. After that, wait 5 seconds and assign the new goal at drop off location Jetbot calculate the destination's path, then show the marker at the drop off zone once jetbot reaches it.
+## Prerequisites/Dependencies  
+* Gazebo >= 7.0  
+* [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+* ROS rtabmap_ros package  
+```
+sudo apt-get install ros-kinetic-rtabmap-ros
+```
 
+* ROS gazebo package  
+```
+sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control  ros-kinetic-effort-controllers
+```
+
+## Run the project  
+* Clone ros-teleop repository
+* Clone this repository
+* Open the repository and make  
+```
+cd /home/catkin_ws/src
+git clone https://github.com/ros-teleop/teleop_twist_keyboard
+cd ..
+catkin_make
+```
+
+* Launch my_robot in Gazebo to load both the world and plugins  
+```
+cd /home/workspace/catkin_ws/
+source devel/setup.bash
+roslaunch my_robot world.launch
+```  
 ### Project structure:
 ```bash
 
