@@ -3,6 +3,7 @@
 
 [![Demo_Video](/videos/RobotND-Home-Service-Robot.gif)](https://youtu.be/9t6gXnkddTM)
 ![Jetbot_Model2](images/jetbot1_small.png)  
+![Screen](images/home_service_robot.jpg)  
 
 ## Overview  
 The simulation starts by showing the marker object at the pickup zone then the Jetbot is assigned the pickup zone as the goal.
