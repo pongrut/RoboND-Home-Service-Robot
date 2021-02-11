@@ -50,21 +50,15 @@ rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 
 ## Run the project  
-* Clone ros-teleop repository
-* Clone this repository
-* Open the repository and make  
-```
-cd /home/catkin_ws/src
-git clone https://github.com/ros-teleop/teleop_twist_keyboard
-cd ..
-catkin_make
-```
-
-* Launch my_robot in Gazebo to load both the world and plugins  
+* Launch Home Service Robot with shell script  
 ```
 cd /home/workspace/catkin_ws/
 source devel/setup.bash
-roslaunch my_robot world.launch
+# Run Home Service with my Jetbot
+./src/script/home_service.sh
+
+# Or run Home Service with Turtlebot
+./src/script/home_service.sh turtlebot
 ```  
 ### Project structure:
 ```bash
