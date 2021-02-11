@@ -50,7 +50,43 @@ rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
 
 ## Run the project  
-* Launch Home Service Robot with shell script  
+* Environment navigation test with test_navigation.sh shell script  
+```
+cd /home/workspace/catkin_ws/
+source devel/setup.bash
+
+# Run with my Jetbot
+./src/script/test_navigation.sh
+
+# Or run with Turtlebot
+./src/script/test_navigation.sh turtlebot
+``` 
+
+* 2 navigation goals test with pick_objects.sh shell script 
+```
+cd /home/workspace/catkin_ws/
+source devel/setup.bash
+
+# Run with my Jetbot
+./src/script/pick_objects.sh
+
+# Or run with Turtlebot
+./src/script/pick_objects.sh turtlebot
+``` 
+
+* Virtual object simulation test with add_marker.sh shell script 
+```
+cd /home/workspace/catkin_ws/
+source devel/setup.bash
+
+# Run with my Jetbot
+./src/script/add_marker.sh
+
+# Or run with Turtlebot
+./src/script/add_marker.sh turtlebot
+``` 
+
+* Launch Home Service Robot with home_service.sh shell script  
 ```
 cd /home/workspace/catkin_ws/
 source devel/setup.bash
