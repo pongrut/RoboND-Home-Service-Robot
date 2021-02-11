@@ -48,18 +48,6 @@ chmod +x src/scripts/*
 chmod +x src/teleop_twist_keyboard/teleop_twist_keyboard.py
 rosdep -i install gmapping turtlebot_teleop turtlebot_simulator
 ```
-## Install Dependent Packages:
-```
-cd /home/workspace/catkin_ws/src
-git clone --branch hydro-devel  https://github.com/ros-perception/slam_gmapping.git
-git clone --branch kinetic https://github.com/turtlebot/turtlebot.git  
-git clone --branch indigo https://github.com/turtlebot/turtlebot_simulator.git
-git clone --branch indigo https://github.com/turtlebot/turtlebot_interactions.git
-git clone https://github.com/ros-teleop/teleop_twist_keyboard
-cd ..
-catkin_make
-source devel/setup.bash
-```
 
 ## Run the project  
 * SLAM environment mapping test with test_slam.sh shell script  
