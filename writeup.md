@@ -25,7 +25,7 @@ The overview of the home service robot simulation consists of 3 main components.
 3. The static 2D map of the world created from manual navigation with SLAM, as shown in Fig.1 right.
 
 ![world_robot_map](./images/world_robot_map.jpg)
-Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file).
+Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file with 0.0500 meter/pixel resolution, defined in pongrut_map.yaml).
 
 ![SLAM_mapping](./images/home_service_SLAM.jpg)
 
