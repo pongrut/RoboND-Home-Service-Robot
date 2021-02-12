@@ -193,7 +193,7 @@ Home Service Robot in Rviz Screen
     │   ├── pick_objects.sh                             # test robot automatic goals navigation script
     │   ├── test_navigation.sh                          # test manual goal setting navigation script
     │   ├── test_slam.sh                                # test manual keyboard navigation script
-    │   └── urdf_tutorial.sh                            # urdf robot visualizing srcript   
+    │   └── urdf_tutorial.sh                            # urdf robot visualizing script   
     ├── slam_gmapping                                   # slam_gmapping package directory
     ├── teleop_twist_keyboard                           # teleop_twist_keyboard package directory
     ├── turtlebot                                       # turtlebot keyboard_teleop package directory
