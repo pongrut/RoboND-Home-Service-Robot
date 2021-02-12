@@ -27,7 +27,7 @@ There are multiple service nodes with specific functions in the background, with
 ![world_robot_map](./images/world_robot_map.jpg)
 Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file with 0.0500 meter/pixel resolution, defined in pongrut_map.yaml).
 
-### Gazebo Simulator
+### Gazebo World Simulator 
 Gazebo simulator is an open-source 3D robot simulator. Gazebo integrates an ODE physics engine, OpenGL rendering, and support code for sensor simulation and actuator control. It can use the performance physics engine. Multiple high-definition options such as ODE, Bullet, etc. (default ODE) provide a realistic rendering of environments, including shadows and high-quality textures. It can simulate sensors that see a simulated environment, such as a laser rangefinder, camera. (Including wide-angle) Kinect appearance sensors, etc.
 
 ![world_robot_map](./images/world.jpg)
@@ -92,15 +92,18 @@ URDF Example
 
 
 ![tf](./images/robot_tf_urdf.jpg)
+Figure 3. Jetbot all joints display
 
 
 ### ROS TF
-A robotic system has many 3D coordinate frames that change over time, such as a map frame, base frame,  wheel frames, camera frame, etc. **TF** keeps track of all these frames over time and then publish all frames related to the map, pose of the robot.  Fig.3 shows the relation of all Jetbot frames in which the robot_footprint frame is the interface base to external, but the robot's real base is base_link almost every frame link with base_link.
+A robotic system has many 3D coordinate frames that change over time, such as a map frame, base frame,  wheel frames, camera frame, etc. **TF** keeps track of all these frames over time and then publish all frames related to the map, pose of the robot.  Fig.4 shows the relation of all Jetbot frames in which the robot_footprint frame is the interface base to external, but the robot's real base is base_link almost every frame link with base_link.
 
 ![all_frames](./images/frames.png)
-Figure 3. Jetbot Frames Structure (TF)
+Figure 4. Jetbot Frames Structure (TF)
 
+### Map
 ![SLAM_mapping](./images/home_service_SLAM.jpg)
+Figure 5. Environment mapping with SLAM
 
 
 
