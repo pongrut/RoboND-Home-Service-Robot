@@ -19,10 +19,14 @@ The goals / steps of this project are the following:
 
 
 ### Writeup 
+The overview of the home service robot simulation consists of 3 main components.
+1. The simulated World in gazebo simulator 3D world created in gazebo building tools. ![Build a world](http://gazebosim.org/tutorials?tut=build_world)
+2. The simulated Robot in the gazebo develops with Unified Robot Description Format (URDF), an XML format for representing a robot model.
+3. The static 2D map of the world which create from manual navigation with SLAM.
+![world_robot_map](./images/world_robot_map.jpg.jpg)
 
 
-
-![car_color_hist](./images/home_service_SLAM.jpg)
+![SLAM_mapping](./images/home_service_SLAM.jpg)
 
 
 The use of HOG features and a linear SVM is well-known since 2005. Very recently high-speed neural network based object detectors have emerged which allow object detection faster than real-time. 
