@@ -20,12 +20,12 @@ The goals / steps of this project are the following:
 
 ### Writeup 
 The overview of the home service robot simulation consists of 3 main components.
-1. The simulated World in gazebo simulator 3D world created in gazebo building tools.
+1. The simulated World in gazebo simulator 3D world created in gazebo building tools as shown in Fig.1 left.
 2. The simulated Robot in the gazebo develops with Unified Robot Description Format (URDF), an XML format for representing a robot model.
-3. The static 2D map of the world which create from manual navigation with SLAM.
+3. The static 2D map of the world created from manual navigation with SLAM, as shown in Fig.1 right.
 
 ![world_robot_map](./images/world_robot_map.jpg)
-
+Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file).
 
 ![SLAM_mapping](./images/home_service_SLAM.jpg)
 
