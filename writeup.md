@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 
 ### Writeup 
 The overview of the home service robot simulation consists of 3 main components.
-1. The simulated World in gazebo simulator 3D world created in gazebo building tools. [Build a world](http://gazebosim.org/tutorials?tut=build_world)
+1. The simulated World in gazebo simulator 3D world created in gazebo building tools.
 2. The simulated Robot in the gazebo develops with Unified Robot Description Format (URDF), an XML format for representing a robot model.
 3. The static 2D map of the world which create from manual navigation with SLAM.
 
@@ -120,6 +120,7 @@ Here is an example result image:
 
 
 References:<br/>
+- [Gazebo: Totorial Build a world](http://gazebosim.org/tutorials?tut=build_world)<br/>
 - [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640)<br/>
 - [YOLO — You only look once, real time object detection explained](https://towardsdatascience.com/yolo-you-only-look-once-real-time-object-detection-explained-492dc9230006)<br/>
 - [Real-time object detection with YOLO](http://machinethink.net/blog/object-detection-with-yolo/)
