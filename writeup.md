@@ -28,9 +28,16 @@ There are multiple service nodes with specific functions in the background, with
 Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file with 0.0500 meter/pixel resolution, defined in pongrut_map.yaml).
 
 
-### Robot with URDF & ROS TF
-![all_frames](./images/frames.png)
+### Robot in Unified Robot Description Format (URDF)
+
 ![tf](./images/robot_tf_urdf.jpg)
+
+
+### ROS TF
+A robotic system has many 3D coordinate frames that change over time, such as a map frame, base frame,  wheel frames, camera frame, etc. **TF** keeps track of all these frames over time and then publish all frames related to the map, pose of the robot.  Fig.3 shows the relation of all Jetbot frames in which the robot_footprint frame is the interface base to external, but the robot's real base is base_link almost every frame link with base_link.
+
+![all_frames](./images/frames.png)
+Figure 3. Jetbot Frames Structure (TF)
 
 ![SLAM_mapping](./images/home_service_SLAM.jpg)
 
