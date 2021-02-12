@@ -30,7 +30,7 @@ Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gaze
 
 ### Robot with URDF & ROS TF
 ![all_frames](./images/frames.png)
-![tf](./images/robot_tf_urdf.png)
+![tf](./images/robot_tf_urdf.jpg)
 
 ![SLAM_mapping](./images/home_service_SLAM.jpg)
 
