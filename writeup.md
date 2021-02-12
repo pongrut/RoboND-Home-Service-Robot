@@ -34,7 +34,7 @@ Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gaze
 
 URDF Example
 ```
-<!-- Creating URDF for mobile robots -->
+<!-- Ref. Creating URDF for mobile robots -->
 <robot name="simple_urdf_sample">        
   <material name="grey">                 
     <color rgba="0.2 0.2 0.2 1"/>
