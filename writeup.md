@@ -102,8 +102,30 @@ A robotic system has many 3D coordinate frames that change over time, such as a 
 Figure 4. Jetbot Frames Structure (TF)
 
 ### Map
+The map is an image that describes the occupancy state of each cell of the world in its corresponding pixel color. In the standard configuration, whiter pixels are blank, blacker pixels are occupied, and the pixels in between are not unknown. Color images are accepted, but the color values are averaged to grayscale. The map server work base on an image file, and it's a metadata file in yaml format.
+
+1. pongrut_map.pgm: Picture of the map in occupancy grid representation
+	- White pixels: Free cells
+	- Black pixels: Occupied cells
+	- Gray pixels: Unknown state
+2. pongrut_map.yaml: The map metadata
+	- **image**: Map name
+	- **resolution**: Resolution of the map (meters/pixel)
+	- **origin**: Pose of the lower-left pixel in the map (x, y, Θ)
+	- **Occupied_thresh**: Cell is considered occupied if its probability is greater than this threshold.
+	- **free_thresh**: Cell is considered unoccupied or free if its probability is less than this threshold.
+	- **negate**: This value will check whether the notation of black colored cell=occupied and white colored cell = free should be preserved
+  
+![map](./images/pongrut_map.jpg)
+ 
+Figure 5. Environment Map of the project
+
+
+Creating a map using slam_gmapping can create a 2-D occupancy grid map of the environment by feeding its node with the robot laser measurements and odometry values. The map will be updated as the robot moves and collect sensory information using its laser range finder sensor as shown in Fig.6.
+
 ![SLAM_mapping](./images/home_service_SLAM.jpg)
-Figure 5. Environment mapping with SLAM
+
+Figure 6. Environment mapping with SLAM
 
 
 
