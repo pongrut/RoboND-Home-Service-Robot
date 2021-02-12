@@ -141,7 +141,7 @@ The Home Service Robot consists of 3 primary components for simulations describe
    2. Goal with **/move_base_simple/goal** topic : The destination goal of robot navigation.
 
 2. Local information (dynamic data) 
-   1. Adaptive Monte Carlo Localization (AMCL) with **/tf** topic: A probabilistic localization system for a robot moving in 2D.
+   1. Adaptive Monte Carlo Localization (AMCL) with **/tf** topic: A probabilistic localization system for a robot moving in 2D. The algorithm starts with the previous belief on robot location. Then, in the first loop, an odometry and laser measurement update. In the second loop, a resampling of particles occurs. Finally, the new location estimation is generated.
    2. Odometry with **/odom** topic: The estimation of robot position relative to a starting location.
    3. Laser range finder with **/scan** topic: A sensor for measuring distances (ranging) around the robot by illuminating the target with laser light 360 degrees.
 
