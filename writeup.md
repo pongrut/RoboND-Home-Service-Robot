@@ -19,6 +19,12 @@ The goals / steps of this project are the following:
 ```
 
 ### Writeup 
+
+
+
+![car_color_hist](./images/home_service_SLAM.jpg)
+
+
 The use of HOG features and a linear SVM is well-known since 2005. Very recently high-speed neural network based object detectors have emerged which allow object detection faster than real-time. 
 
 However, the most popular method of doing object detection nowadays is to use The YOLO is a very effective way for Real-time Object Detection, with only a small amount of code, which yields impressive results.
