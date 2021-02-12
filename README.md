@@ -7,7 +7,7 @@
 
 ## Overview  
 The simulation starts by showing the marker object at the pickup zone then the Jetbot is assigned the pickup zone as the goal.
-Jetbot calculates global path planning to the goal and local path planning along the way when Jetbot has arrived at the pickup zone
+Jetbot calculates global path planning and local path planning along the way to the goal when Jetbot has arrived at the pickup zone
 and then hides the marker. After that, wait 5 seconds and assign the new goal at drop off location Jetbot calculate the destination's path, then show the marker at the drop off zone once jetbot reaches it.
 ## Prerequisites/Dependencies  
 * Gazebo >= 7.0  
