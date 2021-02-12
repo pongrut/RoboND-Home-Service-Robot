@@ -131,7 +131,8 @@ Home Service Robot in Rviz Screen
 └── src.                                                # ROS packages
     ├── add_makers                                      # move_base config files
     │   ├── src
-    │   │   └── add_markers.cpp                         # add_makers node c++ source code
+    │   │   ├── add_markers.cpp                         # add_makers node c++ source code
+    │   │   └── add_markers_test.cpp                    # add_makers_test node c++ source code
     │   ├── CMakeLists.txt                              # compiler instructions
     │   └── package.xml                                 # package info
     ├── jetbot                                          # jetbot robot package
