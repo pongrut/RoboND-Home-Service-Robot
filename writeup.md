@@ -21,17 +21,18 @@ The overview of the home service robot simulation consists of 3 main components.
 2. The simulated Robot in the gazebo develops with Unified Robot Description Format (URDF), an XML format for representing a robot model.
 3. The static 2D map of the world created from manual navigation with SLAM, as shown in Fig.1 right.
 
-
 There are multiple service nodes with specific functions in the background, with each service nodes communicate with each other by passing messages communicating through the central ROS Master. Gazabo Simulator will receive location and pose change information of the robot from ROS Master and be displayed in the simulation world.
 
 ![world_robot_map](./images/world_robot_map.jpg)
 Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file with 0.0500 meter/pixel resolution, defined in pongrut_map.yaml).
+
 
 ### Gazebo World Simulator 
 Gazebo simulator is an open-source 3D robot simulator. Gazebo integrates an ODE physics engine, OpenGL rendering, and support code for sensor simulation and actuator control. It can use the performance physics engine. Multiple high-definition options such as ODE, Bullet, etc. (default ODE) provide a realistic rendering of environments, including shadows and high-quality textures. It can simulate sensors that see a simulated environment, such as a laser rangefinder, camera. (Including wide-angle) Kinect appearance sensors, etc.
 
 ![world_robot_map](./images/world.jpg)
 Figure 2. Custom Gazebo World of the project
+
 
 ### Robot in Unified Robot Description Format (URDF)
 The Jetbot robot model in this project develops under URDF format. The URDF (Universal Robot Description Format) model collects files describing ROS's physical description. The URDF files are needed for ROS to understand and simulate a robot situation before building the robot. 
@@ -101,6 +102,7 @@ A robotic system has many 3D coordinate frames that change over time, such as a 
 ![all_frames](./images/frames.png)
 Figure 4. Jetbot Frames Structure (TF)
 
+
 ### Map
 The map is an image that describes the occupancy state of each cell of the world in its corresponding pixel color. In the standard configuration, whiter pixels are blank, blacker pixels are occupied, and the pixels in between are not unknown. Color images are accepted, but the color values are averaged to grayscale. The map server work base on an image file, and it's a metadata file in yaml format.
 
@@ -123,11 +125,16 @@ Figure 5. Environment Map of the project
 
 Creating a map using slam_gmapping can create a 2-D occupancy grid map of the environment by feeding its node with the robot laser measurements and odometry values. The map will be updated as the robot moves and collect sensory information using its laser range finder sensor as shown in Fig.6.
 
+Use map_saver saves a map to disk from a SLAM mapping service.
+```
+rosrun map_server map_saver -f pongrut_map
+```
 ![SLAM_mapping](./images/home_service_SLAM.jpg)
 
 Figure 6. Environment mapping with SLAM
 
 
+### Home Service Robot Navigation
 
 References:<br/>
 - [Gazebo: Totorial Build a world](http://gazebosim.org/tutorials?tut=build_world)<br/>
