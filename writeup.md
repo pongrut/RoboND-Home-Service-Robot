@@ -34,16 +34,47 @@ Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gaze
 
 URDF Example
 ```
-   1 <?xml version="1.0"?>
-   2 <robot name="myfirst">
-   3   <link name="base_link">
-   4     <visual>
-   5       <geometry>
-   6         <cylinder length="0.6" radius="0.2"/>
-   7       </geometry>
-   8     </visual>
-   9   </link>
-  10 </robot>
+<!-- Creating URDF for mobile robots -->
+<robot name="simple_urdf_sample">        
+  <material name="grey">                 
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+  <link name="link_1">                   
+    <visual>                            
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>                         
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>                           
+      <mass value="1.0"/>
+      <intertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0.1" ixz="0.1"/>
+    </inertial>
+  </link>
+  </link name="link_2>                  
+    <visual>
+      <geometry>
+        <mesh filename="mesh.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1" type="revolute"> 
+    <origin xyz="1 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="link_1"/>
+    <child link="link_2/>
+  </joint>
+</robot>
 ```
 - **robot**: The root element contains all URDF elements inside.
 - **material**: Define the color of the robot to display in Rviz.
