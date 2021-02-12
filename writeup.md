@@ -1,15 +1,15 @@
-# **Vehicle Detection Project** 
+# **Home Service Robot Project** 
 ---
 
 Pongrut Palarpong  
-May 11, 2018
+February 12, 2021
 
 ---
 
 
 The goals / steps of this project are the following:
 
-* The goal is to write a software pipeline to identify vehicles in a video from a front-facing camera on a car. 
+* The goal is to write software for simulating a full home service robot capable of navigating to pick up and deliver virtual objects on the ROS platform.
 
 
 
@@ -17,36 +17,6 @@ The goals / steps of this project are the following:
 ---
 ### INSTALLATION
 ```
-conda create -n yolo python=3.6 anaconda jupyter
-activate yolo
-conda install -c anaconda numpy 
-conda install -c anaconda cython
-conda install -c anaconda tensorflow-gpu
-conda install -c conda-forge matplotlib 
-conda install -c conda-forge opencv
-conda install -c anaconda pip 
-pip install pillow
-conda install -c conda-forge ffmpeg
-conda install -c conda-forge moviepy
-conda install -c anaconda scipy
-```
-
-
-```
-# download and install Microsoft Visual C++ 14.0  Visual C++ 2015 Build Tools
-# http://landinghub.visualstudio.com/visual-cpp-build-tools
-# http://go.microsoft.com/fwlink/?LinkId=691126&fixForIE=.exe.
-git clone https://github.com/thtrieu/darkflow
-python setup.py build_ext --inplace
-```
-
-### Download Cfg and Weight files.
-- Download the cfg file for this project and put it in cfg directory here: [yolo.cfg](https://1drv.ms/u/s!Ai7WHaWwQnevqKhOkFQRx6CYSGni4A)<br/>
-- Download the weight file for this project and put it in bin directory here: [yolo.weights](https://1drv.ms/u/s!Ai7WHaWwQnevqKhPIekeWdCfnq8tsg)<br/>
-
-References:<br/>
-- [Darkflow GitHub](https://github.com/thtrieu/darkflow)<br/>
-- [Installation Video](https://youtu.be/PyjBd7IDYZs?t=2m57s)
 
 ### Writeup 
 The use of HOG features and a linear SVM is well-known since 2005. Very recently high-speed neural network based object detectors have emerged which allow object detection faster than real-time. 
