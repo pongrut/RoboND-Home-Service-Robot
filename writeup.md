@@ -138,9 +138,10 @@ Figure 6. Environment mapping with SLAM
 The Home Service Robot consists of 3 primary components for simulations as described earlier and the navigation part.
 
 ![navigation_stack](http://wiki.ros.org/navigation/Tutorials/RobotSetup?action=AttachFile&do=get&target=overview_tf_small.png)
+Figure 7.
 
 ![navigation_stack](./images/rosgraph_active.png)
-
+Figure 8. (click see large image):
 
 
 
