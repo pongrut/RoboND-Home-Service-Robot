@@ -30,8 +30,9 @@ Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gaze
 
 ### Robot in Unified Robot Description Format (URDF)
 ![joints](http://wiki.ros.org/urdf/XML/joint?action=AttachFile&do=get&target=joint.png)
-<br/>
-One Shape Example
+
+
+URDF Example
 ```
    1 <?xml version="1.0"?>
    2 <robot name="myfirst">
