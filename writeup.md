@@ -22,7 +22,7 @@ The overview of the home service robot simulation consists of 3 main components.
 3. The static 2D map of the world created from manual navigation with SLAM, as shown in Fig.1 right.
 
 
-There are multiple service nodes with specific functions in the background, with each service node Nodes communicate with each other by passing messages communicating through the central ROS Master. Gazabo Simulator will receive location and pose change information of the robot from ROS Master and be displayed in the simulation world.
+There are multiple service nodes with specific functions in the background, with each service nodes communicate with each other by passing messages communicating through the central ROS Master. Gazabo Simulator will receive location and pose change information of the robot from ROS Master and be displayed in the simulation world.
 
 ![world_robot_map](./images/world_robot_map.jpg)
 Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file with 0.0500 meter/pixel resolution, defined in pongrut_map.yaml).
