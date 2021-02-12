@@ -29,6 +29,31 @@ Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gaze
 
 
 ### Robot in Unified Robot Description Format (URDF)
+![joints](http://wiki.ros.org/urdf/XML/joint?action=AttachFile&do=get&target=joint.png)
+<br/>
+One Shape Example
+```
+   1 <?xml version="1.0"?>
+   2 <robot name="myfirst">
+   3   <link name="base_link">
+   4     <visual>
+   5       <geometry>
+   6         <cylinder length="0.6" radius="0.2"/>
+   7       </geometry>
+   8     </visual>
+   9   </link>
+  10 </robot>
+```
+- **robot**: The root element contains all URDF elements inside.
+- **material**: Define the color of the robot to display in Rviz.
+- **link**: Define one part of the robot in URDF, robots are link defined as a combination of;
+  - visual: Define how the link is displayed in. The contents are mainly the dimension, position, colors, and textures.
+  - collision: Define the shape of the link for physical property calculation in 3D world simulation.
+  - inertial:  Define the link inertia as a physical property calculation in 3D world simulation.
+- **joint**: Defines connecting type fixed, continuous, etc., and how links and joints are connected.
+
+
+
 
 ![tf](./images/robot_tf_urdf.jpg)
 
@@ -135,8 +160,10 @@ Here is an example result image:
 
 References:<br/>
 - [Gazebo: Totorial Build a world](http://gazebosim.org/tutorials?tut=build_world)<br/>
-- [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640)<br/>
-- [YOLO — You only look once, real time object detection explained](https://towardsdatascience.com/yolo-you-only-look-once-real-time-object-detection-explained-492dc9230006)<br/>
+- [Building a Visual Robot Model with URDF from Scratch](http://wiki.ros.org/urdf/Tutorials/Building%20a%20Visual%20Robot%20Model%20with%20URDF%20from%20Scratch)
+- [Creating URDF for mobile robots](http://translate.google.com/translate?js=n&sl=auto&tl=destination_language&u=https://gbiggs.github.io/rosjp_urdf_tutorial_text/mobile_robot_urdf.html#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%82%88%E3%81%86%E3%81%AE%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA)
+
+<br/>
 - [Real-time object detection with YOLO](http://machinethink.net/blog/object-detection-with-yolo/)
 
 ### Video Implementation
