@@ -27,10 +27,14 @@ There are multiple service nodes with specific functions in the background, with
 ![world_robot_map](./images/world_robot_map.jpg)
 Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file with 0.0500 meter/pixel resolution, defined in pongrut_map.yaml).
 
+### Gazebo Simulator
+Gazebo simulator is an open-source 3D robot simulator. Gazebo integrates an ODE physics engine, OpenGL rendering, and support code for sensor simulation and actuator control. It can use the performance physics engine. Multiple high-definition options such as ODE, Bullet, etc. (default ODE) provide a realistic rendering of environments, including shadows and high-quality textures. It can simulate sensors that see a simulated environment, such as a laser rangefinder, camera. (Including wide-angle) Kinect appearance sensors, etc.
+
+![world_robot_map](./images/world.jpg)
+Figure 2. Custom Gazebo World of the project
 
 ### Robot in Unified Robot Description Format (URDF)
-![joints](http://wiki.ros.org/urdf/XML/joint?action=AttachFile&do=get&target=joint.png)
-
+The Jetbot robot model in this project develops under URDF format. The URDF (Universal Robot Description Format) model collects files describing ROS's physical description. The URDF files are needed for ROS to understand and simulate a robot situation before building the robot. 
 
 URDF Example
 ```
