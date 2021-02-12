@@ -135,7 +135,16 @@ Figure 6. Environment mapping with SLAM
 
 
 ### Home Service Robot Navigation
-The Home Service Robot consists of 3 primary components for simulations as described earlier and the navigation part.
+The Home Service Robot consists of 3 primary components for simulations described earlier, and move_base package is a core for the navigation. The input data of move_base has  2 categories;
+1. Global information (static data)
+   1. map with /map topic : The map_server that provide occupancy grid map.
+   2. goal with /move_base_simple/goal topic : The destination goal of robot navigation.
+
+2. Local information (dynamic data) 
+   1. Adaptive Monte Carlo Localization (AMCL) with /tf topic: A probabilistic localization system for a robot moving in 2D.
+   2. Odometry with /odom topic: The estimation of robot position relative to a starting location.
+   3. Laser range finder with /scan topic: A sensor for measuring distances (ranging) around the robot by illuminating the target with laser light 360 degrees.
+
 
 ![navigation_stack](http://wiki.ros.org/navigation/Tutorials/RobotSetup?action=AttachFile&do=get&target=overview_tf_small.png)
 Figure 7.
@@ -149,6 +158,7 @@ References:<br/>
 - [Gazebo: Totorial Build a world](http://gazebosim.org/tutorials?tut=build_world)<br/>
 - [Building a Visual Robot Model with URDF from Scratch](http://wiki.ros.org/urdf/Tutorials/Building%20a%20Visual%20Robot%20Model%20with%20URDF%20from%20Scratch)
 - [Creating URDF for mobile robots](http://translate.google.com/translate?js=n&sl=auto&tl=destination_language&u=https://gbiggs.github.io/rosjp_urdf_tutorial_text/mobile_robot_urdf.html#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%82%88%E3%81%86%E3%81%AE%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA)
+- [Adaptive Monte Carlo Localization](https://roboticsknowledgebase.com/wiki/state-estimation/adaptive-monte-carlo-localization/)
 
 <br/>
 
