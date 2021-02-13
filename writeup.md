@@ -142,8 +142,9 @@ However, some parameters like update_min_d and update_min_a were adjusted to acc
 
 
 ## Home Service Robot Navigation
-The Home Service Robot consists of 3 primary components for robot simulations described earlier. The **move_base node** is a core for the navigation to which software send navigation goals and get velocity commands in return, see the diagram in Fig 7. 
+The Home Service Robot consists of 3 primary components for robot simulations described earlier. The **move_base node** is a core for the navigation to which software send navigation goals and get velocity commands in return, see the diagram in Fig 7.<br/> 
 However, successful robot autonomous navigation needs precise **Localization** and accurate **Path planning**.
+
 
 ![navigation_stack](http://wiki.ros.org/navigation/Tutorials/RobotSetup?action=AttachFile&do=get&target=overview_tf_small.png)
  
