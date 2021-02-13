@@ -142,7 +142,11 @@ However, some parameters like update_min_d and update_min_a were adjusted to acc
 
 
 ## Home Service Robot Navigation
-The Home Service Robot consists of 3 primary components for robot simulations described earlier. The **move_base node** is a core for the navigation to which software send navigation goals and get velocity commands in return. However, successful robot autonomous navigation needs precise **Localization** and accurate **Path planning**.
+The Home Service Robot consists of 3 primary components for robot simulations described earlier. The **move_base node** is a core for the navigation to which software send navigation goals and get velocity commands in return, see the diagram in Fig 7. However, successful robot autonomous navigation needs precise **Localization** and accurate **Path planning**.
+
+![navigation_stack](http://wiki.ros.org/navigation/Tutorials/RobotSetup?action=AttachFile&do=get&target=overview_tf_small.png)
+Figure 7. Navigation Stack Setup
+source: http://wiki.ros.org/move_base
 
 ### Localization
    1. Adaptive Monte Carlo Localization (AMCL) with **/tf** topic: A probabilistic localization system for a robot moving in 2D. 
@@ -157,9 +161,7 @@ The Home Service Robot consists of 3 primary components for robot simulations de
 
 
 
-![navigation_stack](http://wiki.ros.org/navigation/Tutorials/RobotSetup?action=AttachFile&do=get&target=overview_tf_small.png)
-Figure 7. Navigation Stack Setup
-source: http://wiki.ros.org/move_base
+
 
 ![navigation_stack](./images/rosgraph_active.png)
 Figure 8. (click see large image):
@@ -170,7 +172,9 @@ References:<br/>
 - [Gazebo: Totorial Build a world](http://gazebosim.org/tutorials?tut=build_world)<br/>
 - [Building a Visual Robot Model with URDF from Scratch](http://wiki.ros.org/urdf/Tutorials/Building%20a%20Visual%20Robot%20Model%20with%20URDF%20from%20Scratch)
 - [Creating URDF for mobile robots](http://translate.google.com/translate?js=n&sl=auto&tl=destination_language&u=https://gbiggs.github.io/rosjp_urdf_tutorial_text/mobile_robot_urdf.html#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%82%88%E3%81%86%E3%81%AE%E3%82%B8%E3%82%AA%E3%83%A1%E3%83%88%E3%83%AA)
+- [Building a Map with a Turtlebot](https://edu.gaitech.hk/turtlebot/create-map-kenict.html)
 - [Adaptive Monte Carlo Localization](https://roboticsknowledgebase.com/wiki/state-estimation/adaptive-monte-carlo-localization/)
+- [AMCL Parameters](http://wiki.ros.org/amcl)
 
 <br/>
 
