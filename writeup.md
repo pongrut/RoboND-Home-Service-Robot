@@ -136,6 +136,11 @@ Figure 6. Environment mapping with SLAM
 
 ### Home Service Robot Navigation
 The Home Service Robot consists of 3 primary components for simulations described earlier, and move_base package is a core for the navigation. The input data of move_base has  2 categories;
+
+## Localization
+## Path Planning 
+
+
 1. Global information (static data)
    1. Map with **/map** topic : The map_server that provide occupancy grid map.
    2. Goal with **/move_base_simple/goal** topic : The destination goal of robot navigation.
