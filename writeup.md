@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 
 ---
-### Overview
+## Overview
 The overview of the home service robot simulation consists of 3 main components.
 1. The simulated World in gazebo simulator 3D world created in gazebo building tools as shown in Fig.1 left.
 2. The simulated Robot in the gazebo develops with Unified Robot Description Format (URDF), an XML format for representing a robot model.
@@ -27,14 +27,14 @@ There are multiple service nodes with specific functions in the background, with
 Figure 1. Left:  The simulated 3D World. Middle: The simulated Robot in the gazebo. Right: 2D Map (image file with 0.0500 meter/pixel resolution, defined in pongrut_map.yaml).
 
 
-### Gazebo World Simulator 
+## Gazebo World Simulator 
 Gazebo simulator is an open-source 3D robot simulator. Gazebo integrates an ODE physics engine, OpenGL rendering, and support code for sensor simulation and actuator control. It can use the performance physics engine. Multiple high-definition options such as ODE, Bullet, etc. (default ODE) provide a realistic rendering of environments, including shadows and high-quality textures. It can simulate sensors that see a simulated environment, such as a laser rangefinder, camera. (Including wide-angle) Kinect appearance sensors, etc.
 
 ![world_robot_map](./images/world.jpg)
 Figure 2. Custom Gazebo World of the project
 
 
-### Robot in Unified Robot Description Format (URDF)
+## Robot in Unified Robot Description Format (URDF)
 The Jetbot robot model in this project develops under URDF format. The URDF (Universal Robot Description Format) model collects files describing ROS's physical description. The URDF files are needed for ROS to understand and simulate a robot situation before building the robot. 
 
 URDF Example
@@ -96,14 +96,14 @@ URDF Example
 Figure 3. Jetbot all joints display
 
 
-### ROS TF
+## ROS TF
 A robotic system has many 3D coordinate frames that change over time, such as a map frame, base frame,  wheel frames, camera frame, etc. **TF** keeps track of all these frames over time and then publish all frames related to the map, pose of the robot.  Fig.4 shows the relation of all Jetbot frames in which the robot_footprint frame is the interface base to external, but the robot's real base is base_link almost every frame link with base_link.
 
 ![all_frames](./images/frames.png)
 Figure 4. Jetbot Frames Structure (TF)
 
 
-### Map
+## Map
 The map is an image that describes the occupancy state of each cell of the world in its corresponding pixel color. In the standard configuration, whiter pixels are blank, blacker pixels are occupied, and the pixels in between are not unknown. Color images are accepted, but the color values are averaged to grayscale. The map server work base on an image file, and it's a metadata file in yaml format.
 
 1. pongrut_map.pgm: Picture of the map in occupancy grid representation
@@ -122,8 +122,9 @@ The map is an image that describes the occupancy state of each cell of the world
  
 Figure 5. Environment Map of the project
 
-
-Creating a map using slam_gmapping can create a 2-D occupancy grid map of the environment by feeding its node with the robot laser measurements and odometry values. The map will be updated as the robot moves and collect sensory information using its laser range finder sensor as shown in Fig.6.
+## SLAM
+SLAM (Simultaneous Localization and Mapping)  is a problem creating a map of the environment while simultaneously tracking the underlying robots. It is difficult because the map is required to localize, and accurate pose estimation is required for mapping. However, there is an approximate solution using a probability algorithm such as a particle filter.
+One method known as GMapping can perform SLAM on laser range data (LiDAR scanning) and local distance measurement sources. The algorithm has a ROS wrapper node in the gmapping package. Creating a map using slam_gmapping can create a 2-D occupancy grid map of the environment by feeding its node with the robot laser measurements and odometry values. The map will be updated as the robot moves and collect sensory information using its laser range finder sensor as shown in Fig.6.
 
 Use map_saver saves a map to disk from a SLAM mapping service.
 ```
@@ -133,26 +134,32 @@ rosrun map_server map_saver -f pongrut_map
 
 Figure 6. Environment mapping with SLAM
 
+## AMCL
+After we have a map, **amcl** package will be used to localize the robot's position in the map from the initial pose. The robot's pose may not be correct, but the robot can collect different landmarks in the map from laser range finder and odometry through sensor fusion. To find the probability of the closest robot position. The implements of the Monte Carlo localization algorithm starts with the previous belief on robot location. Then, in the first loop, an odometry and laser measurement update. In the second loop, a resampling of particles occurs. Finally, the new location estimation is generated.
 
-### Home Service Robot Navigation
-The Home Service Robot consists of 3 primary components for simulations described earlier, and move_base package is a core for the navigation. The input data of move_base has  2 categories;
-
-## Localization
-## Path Planning 
+The amcl configuration of Jetbot initially from [amcl.launch.xml](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/launch/includes/amcl/amcl.launch.xml) file in turtlebot_navigation package. 
+However, some parameters like update_min_d and update_min_a were adjusted to accommodate the small size of Jetbot [jetbot_amcl.launch](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/launch/jetbot_amcl.launch).
 
 
-1. Global information (static data)
+## Home Service Robot Navigation
+The Home Service Robot consists of 3 primary components for robot simulations described earlier. The **move_base node** is a core for the navigation to which software send navigation goals and get velocity commands in return. However, successful robot autonomous navigation needs precise **Localization** and accurate **Path planning**.
+
+### Localization
+   1. Adaptive Monte Carlo Localization (AMCL) with **/tf** topic: A probabilistic localization system for a robot moving in 2D. 
+   2. Odometry with **/odom** topic: The estimation of robot position relative to a starting location.
+   3. Laser range finder with **/scan** topic: A sensor for measuring distances (ranging) around the robot by illuminating the target with laser light 360 degrees.
+
+### Path Planning 
    1. Map with **/map** topic : The map_server that provide occupancy grid map.
    2. Goal with **/move_base_simple/goal** topic : The destination goal of robot navigation.
 
 2. Local information (dynamic data) 
-   1. Adaptive Monte Carlo Localization (AMCL) with **/tf** topic: A probabilistic localization system for a robot moving in 2D. The algorithm starts with the previous belief on robot location. Then, in the first loop, an odometry and laser measurement update. In the second loop, a resampling of particles occurs. Finally, the new location estimation is generated.
-   2. Odometry with **/odom** topic: The estimation of robot position relative to a starting location.
-   3. Laser range finder with **/scan** topic: A sensor for measuring distances (ranging) around the robot by illuminating the target with laser light 360 degrees.
+
 
 
 ![navigation_stack](http://wiki.ros.org/navigation/Tutorials/RobotSetup?action=AttachFile&do=get&target=overview_tf_small.png)
-Figure 7.
+Figure 7. Navigation Stack Setup
+source: http://wiki.ros.org/move_base
 
 ![navigation_stack](./images/rosgraph_active.png)
 Figure 8. (click see large image):
