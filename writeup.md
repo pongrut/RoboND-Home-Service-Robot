@@ -169,7 +169,7 @@ source: http://wiki.ros.org/move_base
 - local_costmap − used for local planning and obstacle avoidance from everything that can be known from the current position with the sensors right now. E.g., walking people and other moving objects, as well as every wall, etc., that can be seen. It utilizes only the Obstacle and Inflation layers. It uses the "Rolling Window," meaning that it will remain centered around the robot as it moves to represent only the local surroundings. 
 
 #### Planners
-2 planners are used in **move_base** nodethat cooperate to accomplish navigation goals:
+2 planners are used in **move_base** node that cooperate to accomplish navigation goals:
 [move_base_params.yaml](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/config/move_base_params.yaml)
 - Global Planner − operates on the global_costmap. Upon receiving a navigation goal, finds a safe path from the robot's current position to the goal position. Jetbot configuration uses the implementation from the global_planner package, which utilizes Dijkstra's algorithm. [global_planner_params.yaml](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/config/global_planner_params.yaml)
 - Local Planner − operates on the local_costmap. Given a path to follow and the costmap, it produces velocity commands to send to the robot. We use the implementation from the base_local_planner package, which uses the Dynamic Window Approach (DWA). [dwa_local_planner_params.yaml](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/config/dwa_local_planner_params.yaml)
@@ -177,9 +177,9 @@ source: http://wiki.ros.org/move_base
 
 
 ### Summary
-The add_makers node simulates a virtual object at the pick-up zone, and the pick_objects assign the first goal to pick up location by publishing goal to /move_base_simple/goal topic. The Global Planner will calculate the safe path for the robot. During the traveling unknown obstacle shown up in the Rolling Window, the Local Planner will reroute the robot's new route to move.  
+The **add_makers** node simulates a virtual object at the pick-up zone, and the **pick_objects** node assign the first goal to pick up location by publishing goal to /move_base_simple/goal topic. The **Global Planner** will calculate the safe path for the robot. During the traveling unknown obstacle shown up in the Rolling Window, the **Local Planner** will reroute the robot's new route to move.  
 
-In the meantime, add_makers reading robot moving status from ROS Params when robot arrived at pick up zone add_makers node will remove the virtual object, and then pick_objects node assigns the second goal to the drop off zone. When the robot arrived, the drop-off zone add_makers will display the virtual object as successfully delivered, Fig 8. shows all the flow and activities of the Home Service Robot.
+In the meantime, **add_makers** node reading robot moving status from ROS Params when robot arrived at pick up zone **add_makers** node will remove the virtual object, and then **pick_objects** node assigns the second goal to the drop off zone. When the robot arrived, the drop-off zone add_makers will display the virtual object as successfully delivered, Fig 8. shows all the flow and activities of the Home Service Robot.
 
 ![navigation_stack](./images/rosgraph_active.png)
 Figure 8. Project Active Computation Graph (click see large image):
