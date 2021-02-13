@@ -125,7 +125,12 @@ Home Service Robot in Rviz Screen
 │   ├── home_service_robot_2.jpg
 │   ├── home_service_robot_3.jpg
 │   ├── jetbot1.png
-│   └── jetbot1_small.png
+│   ├── jetbot1_small.png
+│   ├── pongrut_map.jpg
+│   ├── robot_tf_urdf.jpg
+│   ├── rosgraph_active.png
+│   ├── world.jpg
+│   └── world_robot_map.jpg
 ├── videos.  
     └── RobotND-Home-Service-Robot.gif 
 └── src.                                                # ROS packages
