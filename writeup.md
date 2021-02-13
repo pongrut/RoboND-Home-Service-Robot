@@ -171,10 +171,11 @@ source: http://wiki.ros.org/move_base
 2 planners are used in **move_base** nodethat cooperate to accomplish navigation goals:
 [move_base_params.yaml](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/config/move_base_params.yaml)
 - Global Planner − operates on the global_costmap. Upon receiving a navigation goal, finds a safe path from the robot's current position to the goal position. Jetbot configuration uses the implementation from the global_planner package, which utilizes Dijkstra's algorithm. [global_planner_params.yaml](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/config/global_planner_params.yaml)
-- Local Planner − operates on the local_costmap. Given a path to follow and the costmap, it produces velocity commands to send to the robot. We use the implementation from the base_local_planner package, which uses the Dynamic Window Approach (DWA).[dwa_local_planner_params.yaml](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/config/dwa_local_planner_params.yaml)
+- Local Planner − operates on the local_costmap. Given a path to follow and the costmap, it produces velocity commands to send to the robot. We use the implementation from the base_local_planner package, which uses the Dynamic Window Approach (DWA). [dwa_local_planner_params.yaml](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/config/dwa_local_planner_params.yaml)
 
 
 
+### Summary
 
 ![navigation_stack](./images/rosgraph_active.png)
 Figure 8. (click see large image):
@@ -195,12 +196,3 @@ References:<br/>
 <br/>
 
 ---
-
-### Discussion
-
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-In this project, I used the Yolov1 model for the Vehicle Detection. YOLO can define the bounding box is more robust than HOG & SVM. However, in some situation pre-trained models confuse in predicting object class such as car and truck, especially a small object image. 
-
-In high accuracy classify case, it may require using the more accurate model such as YOLOv3, including the use of image segmentation and image upscaling techniques before detection.
-
