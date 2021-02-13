@@ -135,7 +135,7 @@ rosrun map_server map_saver -f pongrut_map
 Figure 6. Environment mapping with SLAM
 
 ## AMCL
-After we have a map, **amcl** package will be used to localize the robot's position in the map from the initial pose. The robot's pose may not be correct, but the robot can collect different landmarks in the map from laser range finder and odometry through sensor fusion. To find the probability of the closest robot position. The implements of the Monte Carlo localization algorithm starts with the previous belief on robot location. Then, in the first loop, an odometry and laser measurement update. In the second loop, a resampling of particles occurs. Finally, the new location estimation is generated.
+After we have a map, **amcl** package will be used to localize the robot's position in the map from the initial pose. The robot's pose may not be correct, but the robot can collect different landmarks in the map from laser range finder and odometry through sensor fusion to find the probability of the closest robot position. The implements of the Monte Carlo localization algorithm starts with the previous belief on robot location. Then, in the first loop, an odometry and laser measurement update. In the second loop, a resampling of particles occurs. Finally, the new location estimation is generated.
 
 The amcl configuration of Jetbot initially from [amcl.launch.xml](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/launch/includes/amcl/amcl.launch.xml) file in turtlebot_navigation package. 
 However, some parameters like update_min_d and update_min_a were adjusted to accommodate the small size of Jetbot [jetbot_amcl.launch](https://github.com/pongrut/RoboND-Home-Service-Robot/blob/main/src/jetbot/launch/jetbot_amcl.launch).
