@@ -166,6 +166,7 @@ source: http://wiki.ros.org/move_base
 
 **move_base** node uses two costmaps to store information about the environment. One costmap is used for global planning. It means creating a long-term plan for the entire environment and the other is for local planning and obstacle avoidance.
 - global_costmap − used for creating long-term plans over the entire environment from everything the robot knows from previous visits and stored knowledge.
+- local_costmap − used for local planning and obstacle avoidance from everything that can be known from the current position with the sensors right now. E.g., walking people and other moving objects, as well as every wall, etc., that can be seen. It utilizes only the Obstacle and Inflation layers. It uses the "Rolling Window," meaning that it will remain centered around the robot as it moves to represent only the local surroundings. 
 
 #### Planners
 2 planners are used in **move_base** nodethat cooperate to accomplish navigation goals:
