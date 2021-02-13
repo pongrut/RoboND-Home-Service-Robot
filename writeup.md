@@ -177,9 +177,12 @@ source: http://wiki.ros.org/move_base
 
 
 ### Summary
+The add_makers node simulates a virtual object at the pick-up zone, and the pick_objects assign the first goal to pick up location by publishing goal to /move_base_simple/goal topic. The Global Planner will calculate the safe path for the robot. During the traveling unknown obstacle shown up in the Rolling Window, the Local Planner will reroute the robot's new route to move.  
+
+In the meantime, add_makers reading robot moving status from ROS Params when robot arrived at pick up zone add_makers node will remove the virtual object, and then pick_objects node assigns the second goal to the drop off zone. When the robot arrived, the drop-off zone add_makers will display the virtual object as successfully delivered, Fig 8. shows all the flow and activities of the Home Service Robot.
 
 ![navigation_stack](./images/rosgraph_active.png)
-Figure 8. (click see large image):
+Figure 8. Project Active Computation Graph (click see large image):
 
 
 
